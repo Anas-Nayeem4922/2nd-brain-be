@@ -28,7 +28,7 @@ async function main() {
 
 }
 
-app.post("/signup", async (req, res) => {
+app.post("/signup", async (req: Request, res: Response) => {
     const username : string = req.body.username;
     const email : string = req.body.email;
     const password : string = req.body.password;
@@ -53,7 +53,7 @@ app.post("/signup", async (req, res) => {
     }
 })
 
-app.post("/signin", async (req, res) => {
+app.post("/signin", async (req: Request, res: Response) => {
     const email : string = req.body.email;
     const password : string = req.body.password;
     const foundUser = await User.findOne({
